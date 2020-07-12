@@ -3,11 +3,10 @@ import React, {Component} from 'react'
 
 class DelayedButton extends Component {
 
-    handleClick = (event) => {
-         console.log(this.props.delay)
-        this.props.onDelayedClick(event.setTimeout)
-        let setTimeout = () => {
-             this.props.delay}
+    handleClick = () => {
+        window.setTimeout(() => {
+            this.props.onDelayedClick(event);
+          }, this.props.delay);
     }
 	
   render() { return <button onClick={this.handleClick} /> }
